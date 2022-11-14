@@ -1,0 +1,12 @@
+a = input() # a correspond à notre chaine de caractère
+binaire = "" 
+
+for element in a: # Pour chaque élément de a
+  binaire = binaire + str(bin(ord(element))) 
+  # on convertit l'élément en binaire qu'on ajoute à a
+  binaire = binaire.replace("0b", "")
+  if len(binaire) < 8:
+    while len(binaire) <8:
+      binaire = "0" + binaire 
+  print(binaire, '->', int(binaire, 2), ':', chr(int(binaire, 2)))
+  binaire = ""

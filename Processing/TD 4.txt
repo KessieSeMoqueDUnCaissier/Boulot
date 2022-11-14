@@ -1,0 +1,122 @@
+II - 1)
+
+int rouge=25;
+int vert=60;
+int bleu=200;
+
+void setup() {
+ size (400,400);
+ background(0,0,0);
+ frameRate(50);
+}
+
+
+// On cherche à dessiner un rectangle qui change en permanence de couleur.
+void draw() {
+ fill(rouge,vert,bleu); // On remplit la forme du rectangle avec les couleurs r,g,b.
+ rect(20,20,360,360); // On dessine le rectangle.
+ rouge = (rouge + 1) % 255; 
+ vert = (vert + 1) % 255; 
+ bleu = (bleu + 1) % 255; 
+}
+
+////////////////////////////////////////////////////////////////////////////
+
+II - 2)
+
+// Variables globales.
+int rouge=25;
+int vert=60;
+int bleu=200;
+
+void setup() {
+ size (400,400);
+ background(0,0,0);
+}
+
+// On cherche à dessiner un rectangle avec pour couleurs: r,g,b.
+void draw() {
+ int rouge=25;
+ int vert=255;
+ int bleu=255;
+ fill(rouge,vert,bleu);
+ rect(20,20,360,360);
+}
+
+// Les variables locales sont prioritaires aux variables globales.
+
+//////////////////////////////////////////////////////////////////////////
+
+II - 3)
+
+String chaine;
+void setup() {
+ size (400, 400);
+ background(0, 0, 0);
+ PFont font = createFont("Arial", 32);
+ textFont(font);
+}
+void draw() {
+ chaine="Un texte";
+ text(chaine, 20, 100);
+ affiche();
+ text(chaine, 20, 300); // "Un texte" est affiché 2 fois.
+}
+void affiche() {
+ String chaine="dans la fonction affiche"; // On déclare une nouvelle variable chaine, l'affichant ainsi qu'une seule fois.
+ text(chaine, 20, 200);
+}
+
+// "dans la fonction affiche" est affiché 2 fois dans le programme initial. 
+//        (chaine est appelé deux fois via deux fonctions différentes)
+
+/////////////////////////////////////////////////////
+
+III - 1)
+
+// Déclaration de variables.
+// Déclaration de variables.
+int taille = 10;
+//int angle = 0;
+
+void setup() {
+ size(500, 500);
+ background(255);
+}
+
+void draw() {
+ rectangle();
+}
+
+void rectangle(){
+ rectMode(CENTER);
+ noFill();
+ //rotate(angle);
+ strokeWeight(2.5);
+ rect(250, 250, taille , taille);
+ //angle += 20;
+ taille += 20;
+}
+
+/////////////////////////////////////////////////
+
+IV -1)
+
+// Déclaration de variables.
+float compteur, secondes;
+
+void setup(){
+    size(500,100);
+    background(0);
+    PFont font = createFont("Arial", 32);
+    textFont(font);
+}
+void draw(){
+    secondes = compteur/frameRate;
+    background(0);
+    text("Temps écoulé: " + secondes +" s", 20, 100);
+    text("Temps écoulé: " + secondes +" s", 20, 100);
+    compteur += 1.0;
+
+}
+

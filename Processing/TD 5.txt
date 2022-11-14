@@ -1,0 +1,167 @@
+I.1. (!)(*) Littéraux entiers
+
+12245 , 276
+
+//////////////////////////////////////////////////////////////////////////
+
+I.2. (!)(*) Littéraux réels
+
+2.1968E3.2,  12.87 , 314E-2
+
+/////////////////////////////////////////////////////////////////////////
+
+II.1. (!)(*) J’incrémente, tu incrémentes, il incrémente…
+
+Si n est notre variable alors: n+=1; ++n; n++; n = n + 1 (avec une déclaration de n à 0 initialement.)
+
+/////////////////////////////////////////////////////////////////////////
+
+II.2. (!)(*) Priorité et associativité
+
+4 + 4/2 
+(4 + 4) / 2 
+(24/6) / 2 
+24 / (6/2)   
+
+////////////////////////////////////////////////////////////////////////
+
+III.1. (!)(*) Calculs
+
+// Somme
+int somme(int n){
+    int s = (n * (n+1)) / 2;
+    return s;
+}
+
+// Moyenne
+float moyenne(float a, float b){
+    return (a+b)/2;
+}
+
+// Sphère
+float volumeSphere(float r){
+    r = pow(r, 3);
+    return 4/3 * 3.14 * r;
+}
+
+// C’est les soldes !
+float solde(float p, float tr){
+    return p * tr /100;
+}
+
+///////////////////////////////////////////////////////////////////////////
+
+// Somme
+int somme(int n){
+    int s = (n * (n+1)) / 2;
+    return s;
+}
+
+// Moyenne
+float moyenne(float a, float b){
+    return (a+b)/2;
+}
+
+// Sphère
+float volumeSphere(float r){
+    r = pow(r, 3);
+    return 4/3 * 3.14 * r;
+}
+
+// C’est les soldes !
+float solde(float p, float tr){
+    return p * tr /100;
+}
+
+// Facture
+float facture(float ht, int nArticles){
+    final float tva = 20;
+    return (ht * (1+ tva/100)) * nArticles;
+}
+
+// Un peu d’électricité...
+float tension(float r, float i){
+    return r * i;
+}
+float puissance(float r, float i){
+   float u = tension(r, i);
+   return u * i;
+}
+
+////////////////////////////////////////////////////////////////
+
+IV.1. (!)(*) Priorité des opérateurs et parenthésage
+
+a) (5 >= 6)   : False
+b) 5 != (6+4-9) : True
+c) (5 > 6) == (5 > 9) : True
+
+////////////////////////////////////////////////////////////
+
+IV.2. (!)(*) Priorité des opérateurs et parenthésage 
+
+a) (5 != 0) && (2*(3-6) < 3) 
+	True && True 
+	True
+b) (((3 * 6 > 0) && !(6*5 > 0) || (3 >=0)) 
+	True && !True || True 
+	False || True 
+	True
+
+///////////////////////////////////////////////////////////////
+
+IV.3. (!)(*) Ecriture de conditions
+
+a) (x+y) != 4     
+b) a < x < b
+c) (a >= 1) || (2 < b < (c+1))
+
+/////////////////////////////////////////////////////////////// 
+ 
+VI.1. (!)(*) Inverse
+
+float inverse(float n){
+    if (n != 0) {
+        return 1/n;
+    }
+    return "Votre nombre est nul";
+}
+
+
+////////////////////////////////////////////////////////////////
+
+VI.2. (!)(*) Valeur absolue
+
+float absolu (float n){
+    if (n < 0) {
+      n = n * -1;
+    }
+    return n; 
+}
+
+///////////////////////////////////////////////////////////////
+
+VI.3. (!)(*) Max2
+
+float max2 (float x, float y){
+    if (x > y){
+        return x;
+    } else {
+        return y;
+    }
+}
+
+//////////////////////////////////////////////////////////////
+
+VI.4. (**) Max3
+
+float max3 (float x, float y, float z){
+    if (x > y) && (x > z){
+        return x;
+    } 
+    if (z > y) && (z > x){
+        return z;
+    }else{
+        return y;
+    }
+}
