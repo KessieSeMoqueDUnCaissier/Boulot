@@ -1,0 +1,16 @@
+II.1. (!)(*) En ligne
+
+void setup() {
+  for (int i=8; i>=0 ; i--)
+   enumere(i);
+ }
+
+void enumere(int n) {
+ for (int i=0; i<=n; i++)
+  print("*");
+  println();
+ }
+
+------------------------------------------------------------------------------
+III.1. (!)(*) Multiplication
+

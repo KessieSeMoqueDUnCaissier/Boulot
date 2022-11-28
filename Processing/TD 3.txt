@@ -1,4 +1,4 @@
-II - 3)
+II.3. (!)(**) Utiliser la taille de la fenêtre
 
 // Fenêtre
 size(500, 500);
@@ -11,7 +11,7 @@ ellipse(x, y, diametre, diametre);
 
 ///////////////////////////////////////////////////////////////////
 
-III - 1)
+III.1. (!)(*) Bonjour maître !
 
 String prenom = "Akshay";
 int age = 17;
@@ -20,7 +20,7 @@ println("Bonjour maître " + prenom + ". Vous avez " + age + " ans. " + "C'est " 
 
 //////////////////////////////////////////////////////////////////
 
-III - 2)
+III.2. (!)(*) L’algorithme mystère
 
 float a, b, c;
 a = random(100); // On choisit aléatoirement une valeur comprise dans l'intevalle [0 ;99]
@@ -31,7 +31,7 @@ println(c); // On affiche c
 
 ////////////////////////////////////////////////////////////////////
 
-IV - 1)
+IV.1. (!)(**) La trajectoire de la souris
 
 // déclarations de variables
 // ici les déclarations de variables
@@ -54,7 +54,7 @@ void draw() {
 
 ///////////////////////////////////////////////////////
 
-IV) - 2)
+IV.2. (!)(**) Quoi ma gueule ?
 
 int taille_y, ecart_y;
 void setup() {
@@ -87,7 +87,7 @@ void toto() {
 
 //////////////////////////////////////////////////////
 
-IV) - 3)
+IV.3. (**) Toto varie…
 
 int taille_y, ecart_y, echelle, angle;
 void setup() {
@@ -127,48 +127,7 @@ void toto() {
 }
 
 
-IV) - 4)
-
-int taille_y, ecart_y, echelle, angle, totoX, totoY;
-void setup() {
- size(displayWidth, displayHeight);
-
-}
-
-void draw() {
- background(255);
- toto();
-
-}
-
-void toto() {
- totoX = 0;
- totoY = displayHeight / 2;
- taille_y = 15;
- ecart_y = 0;
- echelle = mouseY / 100;
- angle = mouseX;
-
- // définit l’échelle de la tête = grossissement de 5 fois
- scale(echelle);
- // définit la rotation de la tête = pour une rotation de 45 degrés
- translate(totoX,totoY);
- rotate(radians(angle));
- // le visage de Toto
- ellipse(50, 50, 80, 80);
- // les yeux
- ellipse(35 - ecart_y, 40, taille_y, taille_y);
- ellipse(65 + ecart_y, 40, taille_y, taille_y);
- // le nez
- line(43, 55, 57, 55);
- line(50, 48, 50, 62);
- // la bouche
- line(40, 70, 60, 70);
- line(40, 75, 60, 75);
-
-}
-
-IV) - 5) 
+IV.5. (!)(**) Des variables pour dessiner
 
 // Déclaration de variables.
 // Déclaration de variables.

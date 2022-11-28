@@ -1,4 +1,4 @@
-I - 1)
+I.1. (!)(*) Un cercle qui se déplace
 
 // déclarations de variables
 // ici les déclarations de variables
@@ -24,63 +24,8 @@ void draw() {
 
 }
 
-///////////////////////////////////////////////////////
-I - 2a):
-
-void setup() {
- size(500, 500);
- background(255);
-}
-void draw() {
-
- translate(mouseX, mouseY);
- // le visage de Toto
- ellipse(50, 50, 80, 80);
- 
- // les yeux
- ellipse(35, 40, 15, 15);
- ellipse(65, 40, 15, 15);
- 
- // le nez
- line(43, 55, 57, 55);
- line(50, 48, 50, 62);
- 
- // la bouche
- line(40, 70, 60, 70);
- line(40, 75, 60, 75);
- 
-} 
-
-//////////////////////////////////////////////////////
-I - 2b)
-
-void setup() {
- size(500, 500);
- background(255);
-}
-void draw() {
-
- background(51);
- translate(mouseX, mouseY);
- // le visage de Toto
- ellipse(50, 50, 80, 80);
- 
- // les yeux
- ellipse(35, 40, 15, 15);
- ellipse(65, 40, 15, 15);
- 
- // le nez
- line(43, 55, 57, 55);
- line(50, 48, 50, 62);
- 
- // la bouche
- line(40, 70, 60, 70);
- line(40, 75, 60, 75);
- 
-}
-
 ///////////////////////////////////////////////////////////
-I - 2c)
+I.2. (!)(*) Suis-moi, mon Toto…
 
 void Toto() {
 
@@ -115,7 +60,10 @@ void draw() {
 }
 
 ////////////////////////////////////////////////////////////
-II) 
+
+
+II.1. (!)(*) Mon écran a la varicelle
+
 void setup() {
     size(500, 500);
     background(255);

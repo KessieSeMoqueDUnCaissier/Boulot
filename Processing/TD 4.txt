@@ -1,4 +1,4 @@
-II - 1)
+II.1. (!)(*) Variables locales et globales 1
 
 int rouge=25;
 int vert=60;
@@ -22,7 +22,7 @@ void draw() {
 
 ////////////////////////////////////////////////////////////////////////////
 
-II - 2)
+II.2. (!)(*) Variables locales et globales 2
 
 // Variables globales.
 int rouge=25;
@@ -47,7 +47,7 @@ void draw() {
 
 //////////////////////////////////////////////////////////////////////////
 
-II - 3)
+II.3. (!)(*) Variables locales et globales 3
 
 String chaine;
 void setup() {
@@ -72,7 +72,7 @@ void affiche() {
 
 /////////////////////////////////////////////////////
 
-III - 1)
+III.1. (!)(**) Des variables pour dessiner
 
 // Déclaration de variables.
 // Déclaration de variables.
@@ -100,23 +100,82 @@ void rectangle(){
 
 /////////////////////////////////////////////////
 
-IV -1)
+IV.1. (!)(**) Un chronomètre
 
 // Déclaration de variables.
 float compteur, secondes;
+int compte;
 
 void setup(){
-    size(500,100);
+    size(500,500);
     background(0);
     PFont font = createFont("Arial", 32);
     textFont(font);
 }
+
+
 void draw(){
-    secondes = compteur/frameRate;
-    background(0);
-    text("Temps écoulé: " + secondes +" s", 20, 100);
-    text("Temps écoulé: " + secondes +" s", 20, 100);
+    secondes = compteur/59.9;
+    fill(0);
+    rect(0,410,500,100);
+    fill(255);
+    text("Temps écoulé: " + secondes +" s", 20, 450);
     compteur += 1.0;
 
 }
+void mouseClicked() {
+    compte += 1;
+    float temps = secondes;
+    text("Temps intermédiaire " + compte + ": " + temps +" s", 10, 50+compte*50);
+    
+}
 
+///////////////////////////////////////////////////////////////////////
+
+IV.2. (!)(**) Un toto qui va et vient
+
+int taille_y, ecart_y, echelle, angle;
+int toto_x, toto_y; 
+int toto_vx = 5;
+int toto_vy = 0;
+
+void setup() {
+ size(500, 500);
+
+}
+
+void draw() {
+ background(255);
+ translate(toto_x, toto_y);
+ toto();
+ deplace();
+ 
+}
+
+void toto() {
+ taille_y = 15;
+ ecart_y = 0;
+ echelle = mouseY / 100;
+
+ // le visage de Toto
+ ellipse(50, 50, 80, 80);
+ // les yeux
+ ellipse(35 - ecart_y, 40, taille_y, taille_y);
+ ellipse(65 + ecart_y, 40, taille_y, taille_y);
+ // le nez
+ line(43, 55, 57, 55);
+ line(50, 48, 50, 62);
+ // la bouche
+ line(40, 70, 60, 70);
+ line(40, 75, 60, 75);
+}
+
+void deplace() {
+    toto_x += toto_vx;
+    toto_y += toto_vy;
+}
+
+void mouseClicked() {
+    toto_vx = toto_vx * -1;
+    toto_vy = toto_vy * -1;
+}

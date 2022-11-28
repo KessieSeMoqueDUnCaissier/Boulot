@@ -1,0 +1,68 @@
+II.1. (!)(*-***) Tableaux d’entiers
+
+int[] valeurs; 
+ 
+void setup() { 
+  valeurs = new int[20]; 
+  for (int i=0; i<valeurs.length; i++) 
+    valeurs[i] = int(random(10)); 
+  display(valeurs);
+  print("La taille de la liste est de: " + valeurs.length);
+  println();
+  print("Le maximum est: " + maximum(valeurs));
+  println();
+  print("L'index de votre recherche est: " + indexOf(valeurs, 3));
+  println();
+  print("La moyenne des valeurs de ce tableau est: " + moyenne(valeurs));
+  println();
+  int[] resultat = leftShift(valeurs,4);
+  print("Voici la nouvelle liste leftShifted: ");
+  display(resultat);
+}
+
+void display(int[] tab) {
+    for (int j=0; j<tab.length; j++) 
+     print(tab[j] + ", ");
+     println();
+}
+
+int maximum(int[] tab1) {
+    int maxi = tab1[0];
+    for (int j=0; j<tab1.length; j++)
+        if (maxi <= tab1[j]) {
+            maxi = tab1[j];
+        }
+    return maxi;  
+}
+
+int indexOf(int[] tab2, int val) {
+    for (int j=0; j<tab2.length; j++)
+        if (val == tab2[j]) {
+            return j;
+        }
+    return -1;
+}
+
+float moyenne(int[] tab3) {
+    float somme = 0;
+    for (int j=0; j<tab3.length; j++)
+        somme += tab3[j];
+    float resultat = somme / tab3.length;
+    return resultat;
+}
+
+int[] leftShift(int[] tab4, int idx) {
+    int[] nouveauTab;
+    nouveauTab = new int[tab4.length]; 
+    for (int i=0; i<idx; i++)
+        nouveauTab[i] = tab4[i];
+        
+    for (int j=idx; j<tab4.length-1; j++)
+        nouveauTab[j] = tab4[j+1];
+    nouveauTab[tab4.length-1] = -1;
+    return nouveauTab;   
+
+}
+
+
+
